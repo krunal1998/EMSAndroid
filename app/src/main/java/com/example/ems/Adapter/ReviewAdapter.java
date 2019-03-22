@@ -1,5 +1,6 @@
 package com.example.ems.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -40,10 +41,11 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.durationText.setText(generatedReviewList.get(position).StartDate.toString() + " to "+ generatedReviewList.get(position).EndDate.toString());
+        holder.durationText.setText(generatedReviewList.get(position).StartDate.substring(0,10) + " to "+ generatedReviewList.get(position).EndDate.toString());
         holder.ratingText.setText(generatedReviewList.get(position).AverageRating + "/5");
     }
     @Override
