@@ -44,6 +44,6 @@ public class FragmentContent extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         String title=getArguments().getString(KEY_TITLE);
-        ((TextView)view.findViewById(R.id.title)).setText(title);
+       // ((TextView)view.findViewById(R.id.title)).setText(title);
     }
 }
