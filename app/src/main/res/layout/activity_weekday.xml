@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeekdayActivity"
+    android:background="@color/colorBackground"
+    >
+
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Work Week"
+        android:textSize="30dp"
+        android:textColor="#FF1493"
+        tools:ignore="MissingConstraints" />
+
+    <TableLayout
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content">
+
+        <TableRow android:paddingTop="5dip">
+
+            <TextView
+                android:id="@+id/WeekName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp"
+
+                />
+
+            <TextView
+                android:id="@+id/WeekDuration1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp"
+                tools:ignore="UnknownId" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/WeekName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/WeekDuration2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/WeekName3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/WeekDuration3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/WeekName4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/WeekDuration4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/WeekName5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/WeekDuration5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/WeekName6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/WeekDuration6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/WeekName7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/WeekDuration7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20dp" />
+        </TableRow>
+    </TableLayout>
+
+
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

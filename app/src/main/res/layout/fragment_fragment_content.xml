@@ -10,21 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="300dp">
 
-        <ImageView
-            android:src="@drawable/ic_chat_bubble_outline_black_24dp"
-            android:id="@+id/icon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/title"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="content"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
 </LinearLayout>
