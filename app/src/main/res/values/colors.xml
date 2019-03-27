@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF1493</color>
+    <color name="colorPrimary">#0000FF</color>
     <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="list_item_title">#AAAAAA</color>
+    <color name="list_item_title">#5a51a3</color>
     <color name="list_group_title">#120198</color>
     <color name="list_background">#303030</color>
     <color name="list_background_pressed">#F0F014</color>

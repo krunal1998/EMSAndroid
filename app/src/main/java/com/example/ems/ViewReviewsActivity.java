@@ -90,7 +90,7 @@ public class ViewReviewsActivity extends AppCompatActivity {
     private void showprogressbar() {
         progressBar = new ProgressDialog(this);
         progressBar.setCancelable(false);//you can cancel it by pressing back button
-        progressBar.setMessage("Getting ypur reviews..");
+        progressBar.setMessage("Getting your reviews..");
         progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         //progressBar.setProgress(0);//initially progress is 0
         //progressBar.setMax(100);//sets the maximum value 100

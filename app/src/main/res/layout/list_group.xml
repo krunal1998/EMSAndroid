@@ -9,11 +9,13 @@
         android:id="@+id/listTitle"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:textSize="17dip"
+        android:layout_height="45dip"
+        android:textSize="20dip"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
+        android:gravity="left"
         android:textColor="@color/list_group_title"
-        android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"/>
+        android:background="#dbfcfc"
+        android:paddingLeft="20dp"/>
 
 </LinearLayout>
