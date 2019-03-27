@@ -2,6 +2,7 @@ package com.example.ems.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ems.DashboardActivity;
 import com.example.ems.R;
 import com.example.ems.models.GeneratedReview;
 
@@ -45,7 +47,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.durationText.setText(generatedReviewList.get(position).StartDate.substring(0,10) + " to "+ generatedReviewList.get(position).EndDate.toString());
+        holder.durationText.setText(generatedReviewList.get(position).StartDate.substring(0,10) + " to "+ generatedReviewList.get(position).EndDate.substring(0,10));
         holder.ratingText.setText(generatedReviewList.get(position).AverageRating + "/5");
     }
     @Override
@@ -66,6 +68,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
 
 
         }
+
     }
 
 

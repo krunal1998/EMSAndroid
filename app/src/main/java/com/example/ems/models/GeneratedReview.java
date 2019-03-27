@@ -1,8 +1,9 @@
 package com.example.ems.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class GeneratedReview {
+public class GeneratedReview implements Serializable {
     public int GenerateReviewId;
     public String EmployeeId ;
     public String StartDate;

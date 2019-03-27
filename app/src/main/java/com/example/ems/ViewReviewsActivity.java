@@ -8,6 +8,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.android.volley.NetworkResponse;
@@ -19,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.ems.Adapter.ReviewAdapter;
+import com.example.ems.Helper.RecyclerItemClickListener;
 import com.example.ems.models.Employee;
 import com.example.ems.models.GeneratedReview;
 import com.example.ems.models.PerformanceParameter;
@@ -26,6 +28,7 @@ import com.example.ems.models.Review;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -79,7 +82,38 @@ public class ViewReviewsActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.addItemDecoration(dividerItemDecoration);
-        queue = Volley.newRequestQueue(getApplicationContext());
+
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(getApplicationContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getApplicationContext(),ReviewAvctivity.class);
+                        GeneratedReview generatedReview = new GeneratedReview();
+                        TextView durationText =  view.findViewById(R.id.duration);
+                        TextView ratingText = view.findViewById(R.id.main_rating);
+
+
+                        Log.d("Duration: ",durationText.getText().toString());
+                        Log.d("Rating: ", ratingText.getText().toString());
+
+
+                        double rating = Double.parseDouble(ratingText.getText().toString().substring(0,ratingText.getText().toString().length()-2));
+                        for(GeneratedReview g: glist){
+                            String datestr = g.StartDate.substring(0,10) +" to "+ g.EndDate.substring(0,10);
+                            if(datestr.equals(durationText.getText().toString()) && g.AverageRating == rating)
+                                generatedReview =g;
+                        }
+                        intent.putExtra("GR", generatedReview);
+                        //intent.putExtra("reviews",(Serializable) reviews);
+                        startActivity(intent);
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+
+                    }
+                })
+        );
+
+
         getreviews();
 
         getgeneratedreviews();
@@ -171,6 +205,8 @@ public class ViewReviewsActivity extends AppCompatActivity {
 
             }
         });
+        stringRequest.setShouldCache(false);
+        queue.getCache().clear();
         queue.add(stringRequest);
     }
 
@@ -222,6 +258,8 @@ public class ViewReviewsActivity extends AppCompatActivity {
 
             }
         });
+        stringRequest.setShouldCache(false);
+        queue.getCache().clear();
         queue.add(stringRequest);
     }
 
@@ -334,7 +372,7 @@ public class ViewReviewsActivity extends AppCompatActivity {
 
             }
         });
-
+        stringRequest.setShouldCache(false);
         queue.add(stringRequest);
         if (performanceParameter[0]==null)
             return new PerformanceParameter();
