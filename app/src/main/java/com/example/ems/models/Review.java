@@ -1,6 +1,8 @@
 package com.example.ems.models;
 
-public class Review {
+import java.io.Serializable;
+
+public class Review implements Serializable {
     public int ReviewId;
     public String EmployeeId;
     public int Rating;
