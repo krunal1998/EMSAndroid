@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow android:paddingTop="5dip">
+
+        <TextView
+            android:id="@+id/DateAndStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_span="2"
+            android:padding="5dp"
+            android:text="02/03/2020  -  Present(Full Day)"
+            android:textColor="#000"
+            android:textSize="22sp"
+
+            />
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:text="Punch In Time: "
+            android:textColor="#000"
+            android:textSize="20sp"
+
+            />
+
+        <TextView
+            android:id="@+id/PunchInTimeText"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:padding="5dp"
+            android:text="55:11:69"
+            android:textColor="#000"
+            android:textSize="20sp"
+
+            />
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:text="Punch Out Time: "
+            android:textColor="#000"
+            android:textSize="20sp"
+
+            />
+        <TextView
+            android:id="@+id/PunchOutTimeText"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:padding="5dp"
+            android:text="55:11:69"
+            android:textColor="#000"
+            android:textSize="20sp"
+
+            />
+
+    </TableRow>
+</TableLayout>

@@ -46,6 +46,7 @@ public class HolidayActivity extends MainActivity implements AdapterView.OnItemS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setTitle("Holidays");
         //setContentView(R.layout.activity_holiday);
 
         LayoutInflater inflater = (LayoutInflater) this
@@ -181,9 +182,7 @@ public class HolidayActivity extends MainActivity implements AdapterView.OnItemS
         String item = adapterView.getItemAtPosition(position).toString();
         List<Holiday> currentlist = new ArrayList<>();
         for(Holiday h: holidays)     {
-            //Log.d("In loop :", h.HolidayDate.substring(1,4));
             if(h.HolidayDate.substring(0,4).equals(item)) {
-                // Log.d("In if :", h.HolidayDate);
                 currentlist.add(h);
             }
         }

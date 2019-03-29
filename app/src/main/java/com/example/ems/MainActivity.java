@@ -1,5 +1,6 @@
 package com.example.ems;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private ExpandableListAdapter adapter;
     private List<String> lstTitle;
     private Map<String,List<String>> lstChild;
-    private NavigationManager navigationManager;
+  //  private NavigationManager navigationManager;
 
 
     @Override
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
         mActivityTitle=getTitle().toString();
         expandableListView=(ExpandableListView)findViewById(R.id.navlist);
-        navigationManager= FragmentNavigationManager.getInstance(this);
+       // navigationManager= FragmentNavigationManager.getInstance(this);
 
         initItems();
 
@@ -63,13 +65,26 @@ public class MainActivity extends AppCompatActivity {
         addDrawerItem();
         setupDrawer();
 
-        if(savedInstanceState==null)
-            selectFirstItemAsDefault();
+        //if(savedInstanceState==null)
+          //  selectFirstItemAsDefault();
+
+        //set group indicator
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int width = metrics.widthPixels;
+        expandableListView.setIndicatorBoundsRelative(width - GetPixelFromDips(50), width - GetPixelFromDips(10));
 
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("EMS");
 
+    }
+
+    private int GetPixelFromDips(float pixels) {
+        // Get the screen's density scale
+        final float scale = getResources().getDisplayMetrics().density;
+        // Convert the dps to pixels, based on density scale
+        return (int) (pixels * scale + 0.5f);
     }
 
     @Override
@@ -85,12 +100,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void selectFirstItemAsDefault() {
-        if(navigationManager!= null)
+       /* if(navigationManager!= null)
         {
             String firstItem = lstTitle.get(0);
             navigationManager.showFragment(firstItem);
             getSupportActionBar().setTitle(firstItem);
-        }
+        }*/
     }
 
     private void setupDrawer() {
@@ -139,13 +154,122 @@ public class MainActivity extends AppCompatActivity {
                 //change fragment
                 String selecteditem=((List)(lstChild.get(lstTitle.get(groupPosition)))).get(childPosition).toString();
                 getSupportActionBar().setTitle(selecteditem);
-
-            //    if(items[groupPosition].equals(lstTitle.get(groupPosition)))
-                    navigationManager.showFragment(selecteditem);
-              //  else
-                //    throw new IllegalArgumentException("ERROR");
+                //My info
+                if(groupPosition==1){
+                    //Personal details
+                    if(childPosition==0){
+                        Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
+                    }
+                    //Contact detail
+                    else if(childPosition==1){
+                        Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
+                    }
+                    //Emergency detail
+                    else if(childPosition==2){
+                        Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
+                    }
+                    //Qualification
+                    else if(childPosition==3){
+                        Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
+                    }
+                }
+                //my tasks
+                else if(groupPosition==2)
+                {
+                    //my tasks
+                    if(childPosition==0){
+                        Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
+                    }
+                    //my projects
+                    else if(childPosition==1){
+                        Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
+                    }
+                }
+                //my leave
+                else if(groupPosition==4)
+                {
+                    //apply leave
+                    if(childPosition==0){
+                        Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
+                    }
+                    //leave history
+                    if(childPosition==1){
+                        Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
+                    }
+                    //leave usage report
+                    if(childPosition==2){
+                        Intent intent= new Intent(getApplicationContext(),LeaveUsageActivity.class);
+                        startActivity(intent);
+                    }
+                    //holiday
+                    if(childPosition==3){
+                        Intent intent= new Intent(getApplicationContext(),HolidayActivity.class);
+                        startActivity(intent);
+                    }
+                    //work week
+                    if(childPosition==4){
+                        Intent intent= new Intent(getApplicationContext(),WeekdayActivity.class);
+                        startActivity(intent);
+                    }
+                }
+                //complains
+                else if(groupPosition==6){
+                    //raise complain
+                    if(childPosition==0){
+                        Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
+                    }
+                    //complain history
+                    if(childPosition==1){
+                        Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
+                    }
+                }
 
                 mDrawerLayout.closeDrawer(GravityCompat.START);
+                return false;
+            }
+
+        });
+        expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView expandableListView, View view, int groupPosition, long id) {
+                //if Home is selected from navigation drawer
+                if(groupPosition==0){
+                    Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+
+                //if My attendance is selected from navigation drawer
+                if(groupPosition==3){
+                    Intent intent= new Intent(getApplicationContext(),ViewAttendanceActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                //if My payslip is selected from navigation drawer
+                if(groupPosition==7){
+                    Intent intent= new Intent(getApplicationContext(),DashboardActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+                //if My Performance is selected from navigation drawer
+                if(groupPosition==5){
+                    Intent intent= new Intent(getApplicationContext(),ViewReviewsActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+
+
+
                 return false;
             }
         });
@@ -154,12 +278,16 @@ public class MainActivity extends AppCompatActivity {
     private void getData() {
 
       //  List<String> title= Arrays.asList("Android Programing","Xamarin ","iOS");
-        List<String> childitem=Arrays.asList("Beginner","Intermediate","Advanced","Professional");
+        List<String> leavechilditem=Arrays.asList("Apply for leave","Leave History","Usage Report","Holidays","Work Week");
+        List<String> infochild=Arrays.asList("Personal Details","Contact Detail","Emergency Contact","Qualification");
+        List<String> taskchild=Arrays.asList("My Tasks","My Projects");
+        List<String> complainchild=Arrays.asList("Raise Complain","Complain History");
 
         lstChild =new TreeMap<>();
-        lstChild.put(lstTitle.get(0),childitem);
-        lstChild.put(lstTitle.get(1),childitem);
-        lstChild.put(lstTitle.get(2),childitem);
+        lstChild.put(lstTitle.get(4),leavechilditem);
+        lstChild.put(lstTitle.get(1),infochild);
+        lstChild.put(lstTitle.get(2),taskchild);
+        lstChild.put(lstTitle.get(6),complainchild);
 
        // lstTitle = new ArrayList<>(lstChild.keySet());
 
@@ -167,7 +295,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initItems() {
 
-        lstTitle = Arrays.asList("Home","My Info ","Task","Attendance", "Leave","Performance","Complains","Payroll");
+        lstTitle = Arrays.asList("Home","My Info ","My Tasks","My Attendance", "My Leaves","My Performance","My Complains","My Payslip");
     }
 
     @Override

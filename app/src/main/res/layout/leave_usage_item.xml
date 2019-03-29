@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow android:paddingTop="5dip">
+        <TextView
+            android:id="@+id/LeaveTypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="4"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:text=""
+            android:textColor="#000"
+            android:textSize="24sp"
+
+            />
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:text="Entitlements: "
+            android:textColor="#000"
+            android:textSize="17sp"
+
+            />
+        <TextView
+            android:id="@+id/EntitlementsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:padding="5dp"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="17sp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_marginStart="75dp"
+            android:padding="5dp"
+            android:text="Balance: "
+            android:textColor="#000"
+            android:textSize="17sp"
+
+            />
+        <TextView
+            android:id="@+id/LeaveBalanceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:padding="5dp"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="17sp"
+
+            />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:text="Pending Approval: "
+            android:textColor="#000"
+            android:textSize="17sp"
+
+            />
+        <TextView
+            android:id="@+id/PendingLeaveText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:padding="5dp"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="17sp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_marginStart="75dp"
+            android:padding="5dp"
+            android:text="Scheduled: "
+            android:textColor="#000"
+            android:textSize="17sp"
+
+            />
+        <TextView
+            android:id="@+id/ScheduleLeaveText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:padding="5dp"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="17sp"
+
+            />
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:text="Consumed: "
+            android:textColor="#000"
+            android:textSize="17sp"
+
+            />
+        <TextView
+            android:id="@+id/ConsumedLeaveText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:padding="5dp"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="17sp"
+
+            />
+
+
+    </TableRow>
+</TableLayout>

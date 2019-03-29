@@ -9,30 +9,21 @@
     >
 
 
-    <TextView
-        android:id="@+id/heading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="Work Week"
-        android:textSize="30dp"
-        android:textColor="#FF1493"
-        tools:ignore="MissingConstraints" />
-
     <TableLayout
 
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
 
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="wrap_content">
+        app:layout_constraintVertical_bias="0.102">
 
         <TableRow android:paddingTop="5dip">
 
