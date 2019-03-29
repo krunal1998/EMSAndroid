@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                getSupportActionBar().setTitle("EMS");
+               // getSupportActionBar().setTitle("EMS");
                 invalidateOptionsMenu();
             }
 
@@ -284,10 +284,11 @@ public class MainActivity extends AppCompatActivity {
         List<String> complainchild=Arrays.asList("Raise Complain","Complain History");
 
         lstChild =new TreeMap<>();
-        lstChild.put(lstTitle.get(4),leavechilditem);
-        lstChild.put(lstTitle.get(1),infochild);
         lstChild.put(lstTitle.get(2),taskchild);
         lstChild.put(lstTitle.get(6),complainchild);
+        lstChild.put(lstTitle.get(4),leavechilditem);
+        lstChild.put(lstTitle.get(1),infochild);
+
 
        // lstTitle = new ArrayList<>(lstChild.keySet());
 
@@ -295,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initItems() {
 
-        lstTitle = Arrays.asList("Home","My Info ","My Tasks","My Attendance", "My Leaves","My Performance","My Complains","My Payslip");
+        lstTitle = Arrays.asList("Home","My Info ","My Tasks","My Attendance", "My Leaves","My Performance","My Complains","My Payslip","Log Out");
     }
 
     @Override
