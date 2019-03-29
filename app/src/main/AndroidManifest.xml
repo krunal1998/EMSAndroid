@@ -13,12 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".LeaveHistoryActivity"></activity>
+        <activity android:name=".ApplyLeaveActivity" />
         <activity android:name=".ViewAttendanceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".LeaveUsageActivity" >
+        <activity android:name=".LeaveUsageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
